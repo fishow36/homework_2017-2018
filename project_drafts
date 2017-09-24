@@ -1,0 +1,29 @@
+import urllib.request
+import re
+
+##req = urllib.request.Request('http://polkrug.ru/news/archive')## потом надо поменять на цикл который дает адреса следующих страниц в архиве
+
+def get_urls(req):
+    re_header = re.compile(r'<h3>.*?<a href="(.*?)">.*?</a>.*?</h3>', flags = re.DOTALL)
+    with urllib.request.urlopen(req) as response:
+        html = response.read().decode('utf-8')
+    urls = re.findall(re_header, html)
+    for i in range(len(urls)):
+        urls[i] = 'http://polkrug.ru' + urls[i]
+    return(urls)
+
+def get_pagenumbers():
+    for i in range (1,15):
+        req = urllib.request.Request('http://polkrug.ru/news/archive?page=' + str(i))
+        urls_i = get_urls(req)
+        print(urls_i)
+get_pagenumbers()
+
+    
+##    for i in re.findall(re_header, html):## массив в котором лежат ссылки на статьи на этой странице архива
+##        print('\n' + i)
+##        req = urllib.request.Request('http://polkrug.ru' + i)
+##        with urllib.request.urlopen(req) as response:
+##            html= response.read().decode('utf-8')
+##        
+
