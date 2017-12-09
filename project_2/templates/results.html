@@ -1,0 +1,30 @@
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>Результаты</title>
+	   
+	   	<style type="text/css">   
+	   
+	  body {
+   font-size: 12pt;
+   font-family:tahoma;
+   line-height:140%;
+   }
+   </style>
+    </head>
+ <body>
+ <p><a href="/json">JSON</a>
+<a href="/search">Поиск</a>
+<a href="/stats">Статистика</a>
+<a href="/">Ещё раз заполнить анкету</a></p>
+<p>Результаты поиска для родного языка: <b>{{natlang}}</b> и возрастной группы: <b>от {{agelow}} до {{agehigh}}</b></p>
+<p><em>1 - неграмматично; 2 - полуграмматично; 3 - грамматично</em></p>
+<p>{%for i in result%}
+        {{i}}
+        <br>
+    {%endfor%}
+	{{agegroup}}
+ </p>
+
+ </body>
+ </html>

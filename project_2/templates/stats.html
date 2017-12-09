@@ -1,0 +1,100 @@
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>Статистика</title>
+	   
+	   	<style type="text/css">   
+	   
+	  body {
+   font-size: 12pt;
+   font-family:tahoma;
+   line-height:140%;
+   }
+   </style>
+    </head>
+ <body>
+  <p><a href="/json">JSON</a>
+<a href="/search">Поиск</a>
+<a href="/stats">Статистика</a>
+<a href="/">Ещё раз заполнить анкету</a></p>
+ <p><b>Родной язык:</b></p>
+  {% for lang, num in lang.items() %}
+        <li>{{ lang }} - {{ num }}</li>
+    {% endfor %}
+	
+  <p><b>Возраст:</b></p>
+  {% for age, num in age.items() %}
+        <li>{{ age }} - {{ num }}</li>
+    {% endfor %}
+ 
+ <p><b>Мӓ клубеш Васяде кенӓ.</b></p>
+  <table border="1" width="25%" cellpadding="5">
+   <tr>
+    <th>Неграмматично</th>
+    <th>Полуграмматично</th>
+	<th>Грамматично</th>
+   </tr>
+   <tr>
+    <td>{{ngr1}}</td>
+    <td>{{hgr1}}</td>
+	<td>{{gr1}}</td>
+  </tr>
+ </table>
+ 
+  <p><b>Тӓ корным марынде мода.</b></p>
+   <table border="1" width="25%" cellpadding="5">
+   <tr>
+    <th>Неграмматично</th>
+    <th>Полуграмматично</th>
+	<th>Грамматично</th>
+   </tr>
+   <tr>
+   <td>{{ngr2}}</td>
+    <td>{{hgr2}}</td>
+	<td>{{gr2}}</td>
+  </tr>
+ </table>
+ 
+ 	<p><b>Мӹнь шӹшердеок кашам шолтым.</b></p>
+   <table border="1" width="25%" cellpadding="5">
+   <tr>
+    <th>Неграмматично</th>
+    <th>Полуграмматично</th>
+	<th>Грамматично</th>
+   </tr>
+   <tr>
+   <td>{{ngr3}}</td>
+    <td>{{hgr3}}</td>
+	<td>{{gr3}}</td>
+  </tr>
+ </table>
+ 
+    <p><b>Йӹлмӹм пӓлӹмӓшде вес сӓндӓлӹкӹштӹ нӹлӹм пӓшӓм муаш.</b></p>
+   <table border="1" width="25%" cellpadding="5">
+   <tr>
+    <th>Неграмматично</th>
+    <th>Полуграмматично</th>
+	<th>Грамматично</th>
+   </tr>
+   <tr>
+   <td>{{ngr4}}</td>
+    <td>{{hgr4}}</td>
+	<td>{{gr4}}</td>
+  </tr>
+ </table>
+ 
+    <p><b>Йӹлмӹм пӓлӹмӹде вес сӓндӓлӹкӹштӹ нӹлӹм пӓшӓм муаш.</b></p>
+   <table border="1" width="25%" cellpadding="5">
+   <tr>
+    <th>Неграмматично</th>
+    <th>Полуграмматично</th>
+	<th>Грамматично</th>
+   </tr>
+   <tr>
+   <td>{{ngr5}}</td>
+    <td>{{hgr5}}</td>
+	<td>{{gr5}}</td>
+  </tr>
+ </table>
+ </body>
+ </html>
