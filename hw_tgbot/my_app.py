@@ -17,7 +17,7 @@ bot.set_webhook(url=WEBHOOK_URL_BASE+WEBHOOK_URL_PATH)
 
 app = flask.Flask(__name__)
 def makewordlist():
-    with open ('test.txt', 'r', encoding = 'utf-8') as f:
+    with open ('1grams-3.txt', 'r', encoding = 'utf-8') as f:
         grams = f.read()
     grams = grams.split('\n')
     noun = []
@@ -177,7 +177,7 @@ def index():
 @bot.message_handler(content_types = ['text'])
 def send_changed(message):
     response = changewords(message)
-    bot.send_message(response)
+    send_message(message.chat.id, response)
 
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
